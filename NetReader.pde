@@ -13,6 +13,9 @@ public class NetReader { //<>// //<>//
     placeDiameter = 50;
     transitionDiameter = 50;
     tokenDiameter = 10;
+    for (Arc arc : elementNet.arcs) {
+      arc.arrowLength = arc.arrowLength/2;
+    }
   }
   public void readNet(XML xmlNet, Net net) {
     net.id = readId(xmlNet);
@@ -64,11 +67,11 @@ public class NetReader { //<>// //<>//
 
   private float readPositionY(XML node) {
     try {
-      return node.getChildren("graphics")[0].getChildren("position")[0].getFloat("y");
-    } 
+      return node.getChildren("graphics")[0].getChildren("position")[0].getFloat("y"); //<>//
+    }  //<>//
     catch (Exception e) {
-      return 0; //<>//
-    } //<>//
+      return 0;
+    }
   }
 
   private color readColor(XML node) {

@@ -14,14 +14,15 @@ public class Net {
   protected String id;
 
   public void draw() {
-    for (Arc arc : arcs) {
-      arc.draw();
-    }
+    
     for (Place place : places) {
       place.draw();
     }
     for (Transition transition : transitions) {
       transition.draw();
+    }
+    for (Arc arc : arcs) {
+      arc.draw();
     }
     for (Token at : activeTokens) {
       at.draw();

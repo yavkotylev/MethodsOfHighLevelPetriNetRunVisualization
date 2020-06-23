@@ -4,6 +4,7 @@ public class Arc {
   private final Transition transition;
   private final float fromX, fromY;
   private final float toX, toY;
+  private float arrowLength = 20;
 
   public Arc(Place fromPlace, Transition toTransition) {
     this.place =  fromPlace;
@@ -25,15 +26,23 @@ public class Arc {
   public Arc(Transition fromTransition, Place toPlace) {
     this.place = toPlace; 
     this.transition = fromTransition;
-    if (fromTransition.x < toPlace.x) {
+    if (fromTransition.centerX < toPlace.x) {
       this.fromX = fromTransition.x + fromTransition.diameter;
       this.toX = toPlace.x - toPlace.radius;
-    } else {
+      this.fromY = fromTransition.y + fromTransition.radius;
+      this.toY = toPlace.y;
+    } else if (fromTransition.centerX > toPlace.x) {
       this.fromX = fromTransition.x;
       this.toX = toPlace.x + toPlace.radius;
+      this.fromY = fromTransition.y + fromTransition.radius;
+      this.toY = toPlace.y;
+    } else {
+      this.fromX = fromTransition.centerX;
+      this.toX = fromTransition.centerX;
+      this.fromY = fromTransition.y + fromTransition.diameter;
+      this.toY = toPlace.y - toPlace.radius;
     }
-    this.fromY = fromTransition.y + fromTransition.radius;
-    this.toY = toPlace.y;
+
     this.fromPlaceToTransition = false;
     toPlace.addArc(fromTransition, this);
   }
@@ -53,7 +62,21 @@ public class Arc {
 
   public void draw() {
     line(fromX, fromY, toX, toY);
+    drawArrow(fromX, fromY, toX, toY);
   }
+
+  void drawArrow(float x1, float y1, float x2, float y2) {
+    line(x1, y1, x2, y2);
+    pushMatrix();
+    translate(x2, y2);
+    float a = atan2(x1-x2, y2-y1);
+    rotate(a);
+    line(0, 0, -arrowLength/4, -arrowLength);
+    line(0, 0, arrowLength/4, -arrowLength);
+    popMatrix();
+  } 
+
+
   public float getFromX() {
     return fromX;
   }
