@@ -1,75 +1,51 @@
-public class MainNet {
-  private final ArrayList<Place> places = new ArrayList();
-  private final ArrayList<Transition> transitions = new ArrayList();
-  private final ArrayList<Token> tokens = new ArrayList();
-  private final ArrayList<ReferenceToken> referenceTokens = new ArrayList();
-  private float left = Integer.MAX_VALUE;
-  private float right;
-  private float down;
-  private float up = Integer.MAX_VALUE;
-  private float middleX = 0;
-  private float middleY = 0;
-
+class MainNet extends Net {
+  private final ArrayList<ElementNet> elementNets = new ArrayList();
   public void draw() {
-    for (Place place : places) {
-      place.draw();
+    //drawBorders();
+    super.draw();
+
+    ArrayList<ElementNet> drawnUp = new ArrayList();
+    ArrayList<ElementNet> drawnDown = new ArrayList();
+    for (ElementNet elementNet : elementNets) {
+      if (elementNet.isDisplayed()) {
+        ArrayList<ElementNet> drawnForHalf;
+        if (elementNet.updateAndGetHalf()) {
+          drawnForHalf = drawnUp;
+        } else {
+          drawnForHalf = drawnDown;
+        }
+        elementNet.draw(drawnForHalf);
+        drawnForHalf.add(elementNet);
+      }
     }
-    for (Transition transition : transitions) {
-      transition.draw();
-    }
-    for (int i = 0; i < referenceTokens.size(); i++) {
-      referenceTokens.get(i).drawElementNet(up, down, middleY, referenceTokens, i);
-    }
-    for (ReferenceToken t : referenceTokens) {
-      t.elementNet.shiftY = 0;
-    }
-    for (Token t : tokens) {
-      t.draw();
+    for (ElementNet elementNet : elementNets) {
+      elementNet.netShiftY = 0;
     }
   }
 
-  public void addPlace(Place place) {
-    places.add(place);
-    if ((place.x + place.radius) > right) {
-      right = place.x + place.radius;
-    }
-    if ((place.x - place.radius) < left) {
-      left = place.x - place.radius;
-    }
-    if ((place.y + place.radius) > down) {
-      down = place.y + place.radius;
-    }
-    if ((place.y - place.radius) < up) {
-      up = place.y - place.radius;
-    }
-    middleX = (right - left) / 2;
-    middleY = up + (down - up) / 2;
+  public void addElementNet(ElementNet elementNet) {
+    elementNets.add(elementNet);
   }
 
-  public void addTransition(Transition transition) {
-    transitions.add(transition);
-    if ((transition.x + transition.diameter) > right) {
-      right = transition.x + transition.diameter;
+  public void updateElementNetIsDisplayed(int time) {
+    for (ElementNet en : elementNets) {
+      en.updateIsDisplayed(time);
     }
-    if ((transition.x) < left ) {
-      left = transition.x;
-    }
-    if ((transition.y + transition.diameter) > down) {
-      down = transition.y + transition.diameter;
-    }
-    if ((transition.y) < up) {
-      up = transition.y;
-    }
-    middleY =  up + (down - up) / 2;
-    middleX = left + (right - left) / 2;
   }
 
-  public void addReferenceToken(ReferenceToken token) {
-    referenceTokens.add(token);
-    tokens.add(token);
+  public ArrayList<ElementNet> getElementNets() {
+    return elementNets;
   }
 
-  public void addToken(Token token) {
-    tokens.add(token);
+  public ElementNet getElementNetById(String enId) {
+    for (ElementNet en : elementNets) {
+      if (en.id.equals(enId)) {
+        return en;
+      }
+    }
+    return null;
+  }
+  private void drawBorders() {
+    rect(left, up, right - left, down - up);
   }
 }

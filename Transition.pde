@@ -1,20 +1,17 @@
-public class Transition {
-  public final float x;
-  public final float y;
-  public final float diameter;
-  public final float radius;
-  public int red = 0;
+public class Transition extends BaseShape {
+  public final float diameter, radius;
+  private int colorCount = 0;
+  private color transitionCol;
 
-  public Transition(float x, float y, float diameter) {
-    this.x = x;
-    this.y = y;
+  public Transition(String id, String name, float x, float y, float diameter) {
+    super(id, name, x - diameter/2, y - diameter/2);
     this.diameter = diameter;
     this.radius = diameter/2;
   }
 
   public void draw() {
-    if (red > 0) {
-      fill(138, 255, 138);
+    if (colorCount > 0) {
+      fill(transitionCol);
       rect(x, y, diameter, diameter);
       fill(255);
     } else {
@@ -22,12 +19,12 @@ public class Transition {
     }
   }
 
-
-  public void highlightTransition() {
-    red++;
+  public void setColor(color c) {
+    transitionCol = c;
+    colorCount++;
   }
 
-  public void blackTransition() {
-    red--;
+  public void removeColor() {
+    colorCount--;
   }
 }

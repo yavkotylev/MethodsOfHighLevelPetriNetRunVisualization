@@ -1,0 +1,1171 @@
+<run>
+    <mainNet id="mainNet">
+        <places>
+            <place id="p1">
+                <name>Place1</name>
+                <graphics>
+                    <position x="0" y="150"/>
+                </graphics>
+            </place>
+            <place id="p2">
+                <name>Place2</name>
+                <graphics>
+                    <position x="0" y="300"/>
+                </graphics>
+            </place>
+            <place id="p3">
+                <name>Place3</name>
+                <graphics>
+                    <position x="450" y="150"/>
+                </graphics>
+            </place>
+            <place id="p4">
+                <name>Place4</name>
+                <graphics>
+                    <position x="450" y="300"/>
+                </graphics>
+            </place>
+            <place id="p5">
+                <name>Place5</name>
+                <graphics>
+                    <position x="450" y="0"/>
+                </graphics>
+            </place>
+            <place id="p6">
+                <name>Place6</name>
+                <graphics>
+                    <position x="700" y="400"/>
+                </graphics>
+            </place>
+            <place id="p7">
+                <name>Place7</name>
+                <graphics>
+                    <position x="0" y="450"/>
+                </graphics>
+            </place>
+        </places>
+        <transitions>
+            <transition id="tr1">
+                <name>Transition1</name>
+                <graphics>
+                    <position x="200" y="225"/>
+                </graphics>
+            </transition>
+            <transition id="tr2">
+                <name>Transition2</name>
+                <graphics>
+                    <position x="200" y="75"/>
+                </graphics>
+            </transition>
+            <transition id="tr3">
+                <name>Transition3</name>
+                <graphics>
+                    <position x="700" y="150"/>
+                </graphics>
+            </transition>
+            <transition id="tr4">
+                <name>Transition4</name>
+                <graphics>
+                    <position x="200" y="400"/>
+                </graphics>
+            </transition>
+            <transition id="tr5">
+                <name>Transition5</name>
+                <graphics>
+                    <position x="200" y="311"/>
+                </graphics>
+            </transition>
+        </transitions>
+        <arcs>
+            <arc>
+                <from>p1</from>
+                <to>tr1</to>
+            </arc>
+            <arc>
+                <from>p2</from>
+                <to>tr1</to>
+            </arc>
+            <arc>
+                <from>tr1</from>
+                <to>p3</to>
+            </arc>
+            <arc>
+                <from>tr1</from>
+                <to>p4</to>
+            </arc>
+            <arc>
+                <from>p3</from>
+                <to>tr2</to>
+            </arc>
+            <arc>
+                <from>p3</from>
+                <to>tr3</to>
+            </arc>
+            <arc>
+                <from>p4</from>
+                <to>tr3</to>
+            </arc>
+            <arc>
+                <from>p5</from>
+                <to>tr3</to>
+            </arc>
+            <arc>
+                <from>tr2</from>
+                <to>p5</to>
+            </arc>
+            <arc>
+                <from>tr2</from>
+                <to>p1</to>
+            </arc>
+            <arc>
+                <from>tr3</from>
+                <to>p6</to>
+            </arc>
+            <arc>
+                <from>p6</from>
+                <to>tr4</to>
+            </arc>
+            <arc>
+                <from>tr4</from>
+                <to>p2</to>
+            </arc>
+            <arc>
+                <from>tr4</from>
+                <to>p7</to>
+            </arc>
+            <arc>
+                <from>tr5</from>
+                <to>p2</to>
+            </arc>
+            <arc>
+                <from>p4</from>
+                <to>tr5</to>
+            </arc>
+        </arcs>
+        <tokens>
+            <token id="t4">
+                <name>token_4</name>
+                <color r="255" g="196" b="0"/>
+                <label>yellow</label>
+            </token>
+            <token id="t5">
+                <name>token_5</name>
+                <color r="0" g="21" b="250"/>
+                <label>blue</label>
+            </token>
+            <token id="t7">
+                <name>token_7</name>
+                <color r="0" g="255" b="230"/>
+                <label>lightBlue</label>
+            </token>
+            <token id="t8">
+                <name>token_8</name>
+                <color r="255" g="0" b="247"/>
+                <label>purple</label>
+            </token>
+            <token id="t9">
+                <name>token_9</name>
+                <color r="63" g="204" b="101"/>
+                <label>green</label>
+            </token>
+            <token id="t10">
+                <name>token_10</name>
+                <color r="0" g="0" b="0"/>
+                <label>black</label>
+            </token>
+        </tokens>
+        <initialMarking>
+            <im>
+                <token>t4</token>
+                <place>p1</place>
+            </im>
+            <im>
+                <token>t5</token>
+                <place>p1</place>
+            </im>
+            <im>
+                <token>t9</token>
+                <place>p2</place>
+            </im>
+            <im>
+                <token>t8</token>
+                <place>p2</place>
+            </im>
+        </initialMarking>
+    </mainNet>
+    <elementNets>
+        <elementNet id="enBlueYellow">
+            <displaying interval="20" distance="5" treshold="1"/>
+            <places>
+                <place id="p1">
+                    <name>Place1</name>
+                    <graphics>
+                        <position x="0" y="0"/>
+                    </graphics>
+                </place>
+                <place id="p2">
+                    <name>Place2</name>
+                    <graphics>
+                        <position x="200" y="0"/>
+                    </graphics>
+                </place>
+            </places>
+            <transitions>
+                <transition id="tr1">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="-50"/>
+                    </graphics>
+                </transition>
+                <transition id="tr2">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="50"/>
+                    </graphics>
+                </transition>
+            </transitions>
+            <arcs>
+                <arc>
+                    <from>p1</from>
+                    <to>tr1</to>
+                </arc>
+                <arc>
+                    <from>tr1</from>
+                    <to>p2</to>
+                </arc>
+                <arc>
+                    <from>p2</from>
+                    <to>tr2</to>
+                </arc>
+                <arc>
+                    <from>tr2</from>
+                    <to>p1</to>
+                </arc>
+            </arcs>
+            <tokens>
+                <token id="t1">
+                    <name>token_1</name>
+                </token>
+                <token id="t2">
+                    <name>token_2</name>
+                </token>
+            </tokens>
+            <referenceTokens>
+                <tokenId id="t5"/>
+                <tokenId id="t4"/>
+            </referenceTokens>
+            <initialMarking>
+                <im>
+                    <token>t1</token>
+                    <place>p1</place>
+                </im>
+                <im>
+                    <token>t2</token>
+                    <place>p2</place>
+                </im>
+            </initialMarking>
+        </elementNet>
+        <elementNet id="enGreen">
+            <displaying interval="20" distance="5" treshold="1"/>
+            <places>
+                <place id="p1">
+                    <name>Place1</name>
+                    <graphics>
+                        <position x="0" y="0"/>
+                    </graphics>
+                </place>
+                <place id="p2">
+                    <name>Place2</name>
+                    <graphics>
+                        <position x="200" y="0"/>
+                    </graphics>
+                </place>
+            </places>
+            <transitions>
+                <transition id="tr1">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="-50"/>
+                    </graphics>
+                </transition>
+                <transition id="tr2">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="50"/>
+                    </graphics>
+                </transition>
+            </transitions>
+            <arcs>
+                <arc>
+                    <from>p1</from>
+                    <to>tr1</to>
+                </arc>
+                <arc>
+                    <from>tr1</from>
+                    <to>p2</to>
+                </arc>
+                <arc>
+                    <from>p2</from>
+                    <to>tr2</to>
+                </arc>
+                <arc>
+                    <from>tr2</from>
+                    <to>p1</to>
+                </arc>
+            </arcs>
+            <tokens>
+                <token id="t1">
+                    <name>token_1</name>
+                </token>
+                <token id="t2">
+                    <name>token_2</name>
+                </token>
+            </tokens>
+            <referenceTokens>
+                <tokenId id="t9"/>
+            </referenceTokens>
+            <initialMarking>
+                <im>
+                    <token>t1</token>
+                    <place>p1</place>
+                </im>
+                <im>
+                    <token>t2</token>
+                    <place>p2</place>
+                </im>
+            </initialMarking>
+        </elementNet>
+        <elementNet id="enBlack">
+            <displaying interval="20" distance="5" treshold="1"/>
+            <places>
+                <place id="p1">
+                    <name>Place1</name>
+                    <graphics>
+                        <position x="0" y="0"/>
+                    </graphics>
+                </place>
+                <place id="p2">
+                    <name>Place2</name>
+                    <graphics>
+                        <position x="200" y="0"/>
+                    </graphics>
+                </place>
+            </places>
+            <transitions>
+                <transition id="tr1">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="-50"/>
+                    </graphics>
+                </transition>
+                <transition id="tr2">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="50"/>
+                    </graphics>
+                </transition>
+            </transitions>
+            <arcs>
+                <arc>
+                    <from>p1</from>
+                    <to>tr1</to>
+                </arc>
+                <arc>
+                    <from>tr1</from>
+                    <to>p2</to>
+                </arc>
+                <arc>
+                    <from>p2</from>
+                    <to>tr2</to>
+                </arc>
+                <arc>
+                    <from>tr2</from>
+                    <to>p1</to>
+                </arc>
+            </arcs>
+            <tokens>
+                <token id="t1">
+                    <name>token_1</name>
+                </token>
+                <token id="t2">
+                    <name>token_2</name>
+                </token>
+            </tokens>
+            <referenceTokens>
+                <tokenId id="t10"/>
+            </referenceTokens>
+            <initialMarking>
+                <im>
+                    <token>t1</token>
+                    <place>p1</place>
+                </im>
+                <im>
+                    <token>t2</token>
+                    <place>p2</place>
+                </im>
+            </initialMarking>
+        </elementNet>
+        <elementNet id="enPurple">
+            <displaying interval="20" distance="5" treshold="1"/>
+            <places>
+                <place id="p1">
+                    <name>Place1</name>
+                    <graphics>
+                        <position x="0" y="0"/>
+                    </graphics>
+                </place>
+                <place id="p2">
+                    <name>Place2</name>
+                    <graphics>
+                        <position x="200" y="0"/>
+                    </graphics>
+                </place>
+            </places>
+            <transitions>
+                <transition id="tr1">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="-50"/>
+                    </graphics>
+                </transition>
+                <transition id="tr2">
+                    <name>Transition1</name>
+                    <graphics>
+                        <position x="100" y="50"/>
+                    </graphics>
+                </transition>
+            </transitions>
+            <arcs>
+                <arc>
+                    <from>p1</from>
+                    <to>tr1</to>
+                </arc>
+                <arc>
+                    <from>tr1</from>
+                    <to>p2</to>
+                </arc>
+                <arc>
+                    <from>p2</from>
+                    <to>tr2</to>
+                </arc>
+                <arc>
+                    <from>tr2</from>
+                    <to>p1</to>
+                </arc>
+            </arcs>
+            <tokens>
+                <token id="t1">
+                    <name>token_1</name>
+                </token>
+                <token id="t2">
+                    <name>token_2</name>
+                </token>
+            </tokens>
+            <referenceTokens>
+                <tokenId id="t8"/>
+            </referenceTokens>
+            <initialMarking>
+                <im>
+                    <token>t1</token>
+                    <place>p1</place>
+                </im>
+                <im>
+                    <token>t2</token>
+                    <place>p2</place>
+                </im>
+            </initialMarking>
+        </elementNet>
+    </elementNets>
+    <actions>
+        <action>
+            <time startTime="60" endTime="80"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr1"/>
+            <color r="250" g="0" b="0"/>
+            <removeTokens>
+                <token tokenId="t4" placeId="p1"/>
+                <token tokenId="t9" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t9" placeId="p3"/>
+                <token tokenId="t4" placeId="p4"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="110" endTime="150"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr2"/>
+            <color r="250" g="0" b="0"/>
+            <removeTokens>
+                <token tokenId="t9" placeId="p3"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t9" placeId="p5"/>
+                <token tokenId="t7" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="190" endTime="230"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr1"/>
+            <color r="250" g="0" b="0"/>
+            <removeTokens>
+                <token tokenId="t7" placeId="p1"/>
+                <token tokenId="t8" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t7" placeId="p3"/>
+                <token tokenId="t8" placeId="p4"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="255" endTime="280"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr3"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t9" placeId="p5"/>
+                <token tokenId="t7" placeId="p3"/>
+                <token tokenId="t8" placeId="p4"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t7" placeId="p6"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="255" endTime="290"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr5"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t4" placeId="p4"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t4" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="285" endTime="300"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr4"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t7" placeId="p6"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t7" placeId="p7"/>
+                <token tokenId="t9" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="330" endTime="360"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t5" placeId="p1"/>
+                <token tokenId="t9" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t9" placeId="p3"/>
+                <token tokenId="t5" placeId="p4"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="370" endTime="395"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t9" placeId="p3"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t9" placeId="p5"/>
+                <token tokenId="t10" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="400" endTime="420"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t10" placeId="p1"/>
+                <token tokenId="t4" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t4" placeId="p3"/>
+                <token tokenId="t10" placeId="p4"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="425" endTime="450"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t4" placeId="p3"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t4" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="425" endTime="470"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr5"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t10" placeId="p4"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t10" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="480" endTime="500"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t10" placeId="p2"/>
+                <token tokenId="t4" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t10" placeId="p4"/>
+                <token tokenId="t4" placeId="p3"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="501" endTime="520"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr3"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t10" placeId="p4"/>
+                <token tokenId="t4" placeId="p3"/>
+                <token tokenId="t9" placeId="p5"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t4" placeId="p6"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="522" endTime="530"/>
+            <weight value="10"/>
+            <net netId="mainNet" transitionId="tr4"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t4" placeId="p6"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t4" placeId="p2"/>
+                <token tokenId="t9" placeId="p7"/>
+            </addTokens>
+        </action>
+        <!--en                    ..............BlueYellow................                               !-->
+        <!--to!-->
+        <action>
+            <time startTime="0" endTime="30"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="0" endTime="30"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="70" endTime="90"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="70" endTime="90"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--to!-->
+        <action>
+            <time startTime="250" endTime="290"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="250" endTime="290"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="295" endTime="330"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="295" endTime="330"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--to!-->
+        <action>
+            <time startTime="335" endTime="360"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="335" endTime="360"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="420" endTime="470"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="420" endTime="470"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--to!-->
+        <action>
+            <time startTime="530" endTime="550"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="530" endTime="550"/>
+            <weight value="10"/>
+            <net netId="enBlueYellow" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--           ....................enGreen......................!-->
+        <!--to!-->
+        <action>
+            <time startTime="20" endTime="50"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="20" endTime="50"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="50" endTime="120"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="50" endTime="120"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--to!-->
+        <action>
+            <time startTime="160" endTime="190"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="160" endTime="190"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="250" endTime="300"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="250" endTime="300"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--to!-->
+        <action>
+            <time startTime="390" endTime="420"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="390" endTime="420"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="420" endTime="440"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="420" endTime="440"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--to!-->
+        <action>
+            <time startTime="520" endTime="550"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="520" endTime="550"/>
+            <weight value="10"/>
+            <net netId="enGreen" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--           ....................enBlack......................!-->
+        <!--to!-->
+        <action>
+            <time startTime="380" endTime="420"/>
+            <weight value="10"/>
+            <net netId="enBlack" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="380" endTime="420"/>
+            <weight value="10"/>
+            <net netId="enBlack" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="490" endTime="530"/>
+            <weight value="10"/>
+            <net netId="enBlack" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="490" endTime="530"/>
+            <weight value="10"/>
+            <net netId="enBlack" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--           ....................enPurple......................!-->
+        <!--to!-->
+        <action>
+            <time startTime="40" endTime="70"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="40" endTime="70"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="90" endTime="130"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="90" endTime="130"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+        <!--to!-->
+        <action>
+            <time startTime="160" endTime="200"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr1"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="160" endTime="200"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr2"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </addTokens>
+        </action>
+        <!--return!-->
+        <action>
+            <time startTime="240" endTime="280"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr2"/>
+            <color r="0" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t1" placeId="p2"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t1" placeId="p1"/>
+            </addTokens>
+        </action>
+        <action>
+            <time startTime="240" endTime="280"/>
+            <weight value="10"/>
+            <net netId="enPurple" transitionId="tr1"/>
+            <color r="255" g="255" b="0"/>
+            <removeTokens>
+                <token tokenId="t2" placeId="p1"/>
+            </removeTokens>
+            <addTokens>
+                <token tokenId="t2" placeId="p2"/>
+            </addTokens>
+        </action>
+    </actions>
+</run>
